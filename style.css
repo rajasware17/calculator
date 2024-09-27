@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #69c7d5da;
+    display: flex;
+    /* #07c9eb */
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    position: relative; /* Set the calculator container to relative positioning */
+    background: rgb(59, 58, 58);
+    padding: 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px; /* Adjust width to fit the grid of buttons */
+
+
+}
+
+.calculator form > div {
+    display: flex;
+}
+
+.calculator form input {
+    width: 80px;
+    height: 50px;
+    font-size: 20px;
+    color: rgb(14, 14, 14);
+    cursor: pointer;
+    margin: 0;
+    /* box-sizing: border-box; */
+    
+}
+
+form .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px;
+    border-radius: 10px 10px 0 0; 
+    overflow: hidden; 
+    background-color: rgb(18, 18, 18); 
+}
+
+form .display input {
+    text-align: right;
+    flex: 1;
+    font-size: 30px;
+    box-shadow: none;
+    border-top: 50px; /* Note: This may not have the intended effect for border styling. Consider using border or outline properties if needed. */
+    background-color: rgb(10, 10, 10); /* Set background color to black */
+    color: white; /* Ensure text color is white for visibility */
+    height: 60px;
+   
+}
+
+form input.equal {
+    position: absolute;
+    bottom: 0; /* Align to the bottom of the calculator */
+    right: 0; /* Align to the right side */
+    width: 80px;
+    height: 200px; /* Specific height for the equal button */
+    border-radius: 0px 0px 10px 0px;
+   /* Default background color */
+    color: rgb(7, 7, 7); /* Default text color */
+    transition: background-color 0.0s ease, color 0.3s ease; /* Smooth transition for color change */
+  
+}
+form input.equal:hover {
+    background-color: #f46a0e; /* Background color on hover */
+    color: black; /* Ensure text color is black for visibility */
+}
+
+form input.equal:active {
+    background-color:  white; /* Background color when button is pressed */
+    color: black; /* Ensure text color is black for visibility */
+}
+ form input.zero{
+    border-radius: 0px 0px 0px 10px;
+ }

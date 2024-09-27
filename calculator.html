@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+
+                <div class="display">
+                    <input type="text" name="display">
+                </div>
+
+                <div>
+                    <input type="button" value="+" onclick="display.value += '+' ">
+                    <input type="button" value="-" onclick="display.value += '-' ">
+                    <input type="button" value="*" onclick="display.value += '*' ">
+                    <input type="button" value="/" onclick="display.value += '/' ">
+                </div>
+
+                <div>
+                    <input type="button" value="7" onclick="display.value += '7' ">
+                    <input type="button" value="8" onclick="display.value += '8' ">
+                    <input type="button" value="9" onclick="display.value += '9' ">
+                    <input type="button" value="=" onclick="display.value= eval(display.value)" class="equal">
+                </div>
+
+                <div>
+                    <input type="button" value="6" onclick="display.value += '6' ">
+                    <input type="button" value="5" onclick="display.value += '5' ">
+                    <input type="button" value="4" onclick="display.value += '4' ">
+                </div>
+
+                <div>
+                    <input type="button" value="3" onclick="display.value += '3' ">
+                    <input type="button" value="2" onclick="display.value += '2' ">
+                    <input type="button" value="1" onclick="display.value += '1' ">
+                </div>
+
+                <div>
+                    <input type="button" value="0" onclick="display.value += '0' " class="zero">
+                    <input type="button" value="." onclick="display.value += '.' ">
+                    <input type="button" value="C" onclick="display.value = '' ">
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script>
+        const equalButton = document.querySelector('form input.equal');
+
+        // Handle the 'mousedown' event to change color when the button is pressed
+        equalButton.addEventListener('mousedown', function () {
+            equalButton.classList.add('pressed');
+        });
+
+        // Handle the 'mouseup' event to revert color after releasing the button
+        equalButton.addEventListener('mouseup', function () {
+            equalButton.classList.remove('pressed');
+            equalButton.classList.add('active');
+            // Remove 'active' class after a short time if needed
+            setTimeout(() => {
+                equalButton.classList.remove('active');
+            }, 200); // Adjust the delay time as needed
+        });
+
+        // Handle 'mouseleave' to ensure the button reverts if mouse leaves before mouseup
+        equalButton.addEventListener('mouseleave', function () {
+            equalButton.classList.remove('pressed');
+        });
+    </script>
+
+</body>
+</html>
